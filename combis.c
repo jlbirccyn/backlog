@@ -94,7 +94,7 @@ int main(int argc, char *argv[])
     }
   }
 
-  printf("%d taches, d=(", nombre_de_taches);
+  printf("%d tasks, d=(", nombre_de_taches);
   for (int t = 0; t < nombre_de_taches; t++) {
     if (t > 0) putchar(',');
     printf("%d", d[t]);
