@@ -34,7 +34,12 @@ int min(int a, int b)
   return (a < b) ? a : b;
 }
 
-void attribue(int restant, int tache, const int max_tache, const int date, const int * const deadline)
+void attribue(
+  const int restant,
+  const int tache,
+  const int max_tache,
+  const int date,
+  const int * const deadline)
 {
   if (date <= deadline[tache]) {
     for (int combien = 0; combien <= min(restant, deadline[tache] - date); combien++) {
