@@ -80,20 +80,16 @@ Continuing with the previous example, executing ```sys-2-3.sh``` gives:
 executing the last one with trace: ```echo "2 3 3" | ./combis -t 3``` gives:
 
 ```
- 0
-     0
-     1
-     2
-     3
- 1
-     0
-     1
-     2
- 2
-     0
-     1
- 3
-     0
+ 0 0
+ 0 1
+ 0 2
+ 0 3
+ 1 0
+ 1 1
+ 1 2
+ 2 0
+ 2 1
+ 3 0
 2 tasks, d=(3,3), combis = 10
 ```
 

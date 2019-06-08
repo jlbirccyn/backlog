@@ -34,24 +34,33 @@ int min(int a, int b)
   return (a < b) ? a : b;
 }
 
+void printBacklogs(const int numberOfTask, const int * const backlogs)
+{
+  for (int task = 0; task < numberOfTask; task++) {
+    printf(" %d", backlogs[task]);
+  }
+  putchar('\n');
+}
+
 void attribue(
   const int restant,
   const int tache,
   const int max_tache,
   const int date,
-  const int * const deadline)
+  const int * const deadline,
+  int * const backlogs)
 {
   if (date <= deadline[tache]) {
     for (int combien = 0; combien <= min(restant, deadline[tache] - date); combien++) {
       if (trace) {
-        for (int t = 0; t < tache; t++) printf("    ");
-        printf(" %d\n", combien);
+        backlogs[tache] = combien;
       }
       if (tache < max_tache) {
-        attribue(restant - combien, tache + 1, max_tache, date + combien, deadline);
+        attribue(restant - combien, tache + 1, max_tache, date + combien, deadline, backlogs);
       }
       else {
         combis++;
+        printBacklogs(max_tache + 1, backlogs);
       }
     }
   }
@@ -95,7 +104,8 @@ int main(int argc, char *argv[])
       }
     }
     if (nombre_de_taches > 0) {
-      attribue(backlog, 0, nombre_de_taches - 1, 0, d);
+      int *b = malloc(nombre_de_taches * sizeof(int));
+      attribue(backlog, 0, nombre_de_taches - 1, 0, d, b);
     }
   }
 
