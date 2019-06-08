@@ -97,5 +97,5 @@ executing the last one with trace: ```echo "2 3 3" | ./combis -t 3``` gives:
 2 tasks, d=(3,3), combis = 10
 ```
 
-Baclog attributed to t0 is in first column and backlog attributed to t1 is in second column.
+Backlog attributed to t0 is in first column and backlog attributed to t1 is in second column.
 
