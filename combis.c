@@ -60,7 +60,7 @@ void attribue(
       }
       else {
         combis++;
-        printBacklogs(max_tache + 1, backlogs);
+        if (trace) printBacklogs(max_tache + 1, backlogs);
       }
     }
   }
